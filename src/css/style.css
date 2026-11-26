@@ -5,11 +5,59 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-a.btn{
+
+#container {
+  background-image: url("../images/background-mobile.png");
+  background-size: contain;
+  height: 400vh;
+}
+
+#home {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+  min-height: calc(100vh - 9.6rem);
+  padding: 3.2rem 4%;
+  padding-top: clamp(0rem, 5vw, 3.2rem);
+
+  .home-image {
+    width: clamp(30rem, 50%, 40rem);
+  }
+
+  .home-title {
+    color: var(--color-neutral-8);
+    text-align: center;
+    font-size: clamp(3rem, 5vw, 4.3rem);
+    text-transform: uppercase;
+    line-height: 1.2;
+    max-width: 70rem;
+
+    spam {
+      color: var(--color-primary-1);
+    }
+  }
+
+  .home-description {
+    color: var(--color-neutral-9);
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    max-width: 60rem;
+  }
+
+  .home-actions {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 1.2rem;
+  }
+}
+
+a.btn {
   text-decoration: none;
 }
 
-.btn{
+.btn {
   padding: 1rem 2rem;
   border: none;
   border-radius: 0.8rem;
@@ -20,16 +68,27 @@ a.btn{
   transition: background-color 0.3s ease;
 }
 
-.btn-mobile{
+.btn-mobile {
   font-size: 1.5rem;
 }
 
-.btn-deafault{
+.btn-default {
   background-color: var(--color-primary-1);
   color: var(--color-neutral-0);
 
   &:hover {
     background-color: var(--color-primary-2);
+  }
+}
+
+.btn-outlined {
+  background-color: transparent;
+  color: var(--color-primary-1);
+  border: 0.2rem solid var(--color-primary-1);
+
+  &:hover {
+    background-color: var(--color-primary-1);
+    color: var(--color-neutral-0);
   }
 }
 
@@ -84,10 +143,10 @@ header {
         display: flex;
       }
 
-      li{
+      li {
         text-align: center;
 
-        a{
+        a {
           color: var(--color-neutral-8);
           text-decoration: none;
           font-size: 1rem;
@@ -109,24 +168,24 @@ header {
 }
 
 @media (min-width: 76.9rem) {
-    header{
-      .navbar{
-        .btn-mobile{
-          display: none;
-        }
+  header {
+    .navbar {
+      .btn-mobile {
+        display: none;
+      }
 
-        ul{
-          display: flex;
-          flex-direction: row;
-          position: static;
-          gap: 1rem;
-          width: auto;
-          padding: 0;
-        }
+      ul {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        gap: 1rem;
+        width: auto;
+        padding: 0;
+      }
 
-        .btn-default{
-          display: block;
-        }
+      .btn-default {
+        display: block;
       }
     }
+  }
 }
