@@ -5,6 +5,9 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+a.btn{
+  text-decoration: none;
+}
 
 .btn{
   padding: 1rem 2rem;
@@ -14,10 +17,20 @@
   font-size: 1rem;
   font-weight: 600;
   background-color: transparent;
+  transition: background-color 0.3s ease;
 }
 
 .btn-mobile{
   font-size: 1.5rem;
+}
+
+.btn-deafault{
+  background-color: var(--color-primary-1);
+  color: var(--color-neutral-0);
+
+  &:hover {
+    background-color: var(--color-primary-2);
+  }
 }
 
 :root {
@@ -93,4 +106,27 @@ header {
       display: none;
     }
   }
+}
+
+@media (min-width: 76.9rem) {
+    header{
+      .navbar{
+        .btn-mobile{
+          display: none;
+        }
+
+        ul{
+          display: flex;
+          flex-direction: row;
+          position: static;
+          gap: 1rem;
+          width: auto;
+          padding: 0;
+        }
+
+        .btn-default{
+          display: block;
+        }
+      }
+    }
 }
